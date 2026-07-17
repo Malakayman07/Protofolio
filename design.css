@@ -1,0 +1,720 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header */
+.head {
+    background: linear-gradient(135deg, #101827, #1c2c3b, #101827);
+    color: #F8F4EF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 18px 25px;
+    margin: 10px;
+    font-size: 20px;
+    border: 1px solid rgba(233, 216, 199, 0.55);
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+    box-shadow:
+        0 0 12px rgba(84, 84, 201, 0.45),
+        0 0 30px rgba(84, 148, 201, 0.25),
+        0 8px 25px rgba(69, 60, 193, 0.45);
+}
+
+/* Moving light effect */
+.head::before {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: -20%;
+    width: 45%;
+    height: 250%;
+    background: rgba(75, 62, 173, 0.08);
+    transform: rotate(25deg);
+    transition: 0.6s ease;
+}
+
+.head:hover {
+    transform: translateY(-3px);
+    border-color: #C99A54;
+    box-shadow:
+        0 0 12px rgba(84, 84, 201, 0.45),
+        0 0 30px rgba(84, 148, 201, 0.25),
+        0 8px 25px rgba(69, 60, 193, 0.45);
+}
+
+.head:hover::before {
+    left: 110%;
+}
+
+/* Keeps content above the moving light */
+.head>* {
+    position: relative;
+    z-index: 1;
+}
+
+.head h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #E9D8C7;
+    text-shadow:
+        0 0 8px rgba(233, 216, 199, 0.8),
+        0 0 20px rgba(201, 154, 84, 0.55);
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+}
+
+.links a {
+    font-family: "Fredoka", sans-serif;
+    color: #F8F4EF;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.links a:hover {
+    color: #C99A54;
+    text-shadow: 0 0 10px #C99A54, 0 0 22px #C99A54;
+    transform: translateY(-2px);
+}
+
+/* Search button */
+.search-box button {
+    background-color: #C99A54;
+    color: #101827;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #E9D8C7;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px #C99A54;
+}
+
+.search-box input {
+    padding: 10px 12px;
+    border: 1px solid #E9D8C7;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #C99A54, #dbb883, #d2973e);
+    color: #101827;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px;
+    padding: 40px 25px;
+
+    border-radius: 20px;
+    transition: 0.3s;
+
+    box-sizing: border-box;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hero:first-of-type .hero-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero:first-of-type .hero-text {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.hero:first-of-type .hero-image {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .hero:first-of-type .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero:first-of-type .hero-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.title h2 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #101827;
+}
+
+.nameing h1 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    color: #101827;
+}
+
+.nameing h3 {
+    margin-top: 10px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #3b2a20;
+}
+
+.img {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.photo-card {
+    position: relative;
+    width: min(100%, 380px);
+    height: 480px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #E9D8C7, #C99A54, #101827);
+    box-shadow:
+        0 0 20px rgba(233, 216, 199, 0.8),
+        0 0 45px rgba(201, 154, 84, 0.8),
+        0 15px 35px rgba(16, 24, 39, 0.45);
+    transition: 0.5s ease;
+    padding: 5px;
+    border-radius: 22px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s ease;
+
+    border-radius: 17px;
+
+}
+
+.photo-card::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: -60%;
+    left: -20%;
+    width: 18%;
+    height: 220%;
+    background: rgba(255, 255, 255, 0.28);
+    transform: rotate(25deg);
+    transition: 0.35s ease;
+    pointer-events: none;
+}
+
+.photo-card:hover {
+    transform: translateY(-12px) rotate(2deg);
+    box-shadow:
+        0 0 25px #E9D8C7,
+        0 0 60px #C99A54,
+        0 0 100px rgba(201, 154, 84, 0.7);
+}
+
+.photo-card:hover img {
+    transform: scale(1.06);
+}
+
+.photo-card:hover::before {
+    left: 115%;
+}
+
+.photo-glow {
+    position: absolute;
+    z-index: 1;
+    right: -40px;
+    bottom: -40px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #C99A54;
+    filter: blur(45px);
+    opacity: 0.8;
+}
+
+.photo-label {
+    position: absolute;
+    z-index: 3;
+    left: 25px;
+    bottom: 25px;
+    padding: 12px 18px;
+    border: 1px solid rgba(233, 216, 199, 0.7);
+    border-radius: 12px;
+    background: rgba(16, 24, 39, 0.78);
+    color: #F8F4EF;
+    backdrop-filter: blur(8px);
+}
+
+.photo-label span {
+    font-family: "Fredoka", sans-serif;
+    font-size: 13px;
+    color: #C99A54;
+}
+
+.photo-label h3 {
+    margin-top: 4px;
+    font-family: "Great Vibes", cursive;
+    font-size: 28px;
+    font-weight: 400;
+    color: #E9D8C7;
+}
+
+.paragraph-but {
+    font-family: "Fredoka", sans-serif;
+    max-width: 600px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #101827;
+}
+
+/* Project Type Selector */
+.hire-me {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 25px;
+
+    border: 1px solid #E9D8C7;
+    border-radius: 10px;
+
+    background: #fff;
+    color: #101827;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    outline: none;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 0 10px rgba(201, 154, 84, 0.5),
+        0 0 20px rgba(201, 154, 84, 0.3);
+}
+
+.hire-me:hover,
+.hire-me:focus {
+    background: #101827;
+    color: #C99A54;
+    border-color: #C99A54;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(201, 154, 84, 0.7),
+        0 0 30px rgba(201, 154, 84, 0.5);
+}
+
+.hero-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+    font-family: "Fredoka", sans-serif;
+    color: #101827;
+}
+
+.hero-social span {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(16, 24, 39, 0.45);
+    border-radius: 50%;
+    background: rgba(248, 244, 239, 0.35);
+    color: #101827;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.35s ease;
+    box-shadow: 0 0 10px rgba(233, 216, 199, 0.6);
+}
+
+.social-icons a:hover {
+    background: #101827;
+    color: #C99A54;
+    border-color: #101827;
+    transform: translateY(-6px) rotate(8deg);
+    box-shadow:
+        0 0 12px #E9D8C7,
+        0 0 25px #C99A54,
+        0 0 45px rgba(201, 154, 84, 0.8);
+}
+
+
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* that what helps us */
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 70px;
+
+}
+
+.projects-card {
+    background: linear-gradient(135deg, #101827, #1c2c3b, #101827);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    /* Let the grid control the width */
+    max-width: 300px;
+    /* Maximum card width */
+    height: 300px;
+    margin: 0 auto;
+    /* Center the card inside its grid cell */
+    padding: 15px;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.projects-card:hover {
+    transform: translateY(-8px);
+}
+
+.projects-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: transform .5s ease;
+    /* Remove the 20px padding */
+    box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+
+}
+
+.projects-card:hover img {
+    transform: scale(1.08);
+    overflow: hidden;
+}
+
+.projects-card h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.projects-card p {
+    color: #F8F4EF;
+    margin-bottom: 10px;
+}
+
+.projects-card button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #C99A54;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.projects-card button:hover {
+    background-color: rgb(37, 67, 37);
+}
+
+/* ==========================
+        Skills Section
+========================== */
+
+.skills-section {
+
+    margin: 10px;
+    padding: 80px 30px;
+
+    border-radius: 30px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #C99A54, #dbb883, #d2973e);
+
+    border: 1px solid rgba(201, 154, 84, .4);
+
+    box-shadow:
+        0 0 25px rgba(201, 154, 84, .25),
+        0 25px 60px rgba(16, 24, 39, .18),
+        inset 0 1px 1px rgba(255, 255, 255, .8);
+
+    text-align: center;
+}
+
+.skills-title {
+
+    font-size: 42px;
+    color: #101827;
+
+    margin-bottom: 10px;
+
+    font-family: "Fredoka", sans-serif;
+}
+
+.skills-subtitle {
+
+    color: #555;
+    font-size: 18px;
+
+    margin-bottom: 60px;
+}
+
+/* ==========================
+      Orbit Container
+========================== */
+
+.skills-orbit {
+
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+
+    margin: auto;
+}
+
+/* ==========================
+         Skill Circle
+========================== */
+
+.skill {
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #101827, #1C2C3B);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #F8F4EF;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px rgba(201, 154, 84, .4),
+        0 0 25px rgba(201, 154, 84, .3);
+
+    transition: .4s;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.skill:hover {
+
+    transform: scale(1.15);
+
+    background: rgb(37, 67, 37);
+
+    color: #F8F4EF;
+
+    box-shadow:
+        0 0 20px rgba(37, 67, 37, .6),
+        0 0 40px rgba(37, 67, 37, .4);
+}
+
+.skill i {
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.skill span {
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ==========================
+         Positions
+========================== */
+
+.python {
+
+    top: 0;
+    left: 205px;
+
+    animation-delay: 0s;
+}
+
+.cpp {
+
+    top: 70px;
+    right: 50px;
+
+    animation-delay: .5s;
+}
+
+.pandas {
+
+    top: 205px;
+    right: 0;
+
+    animation-delay: 1s;
+}
+
+.numpy {
+
+    bottom: 70px;
+    right: 50px;
+
+    animation-delay: 1.5s;
+}
+
+.react {
+
+    bottom: 0;
+    left: 205px;
+
+    animation-delay: 2s;
+}
+
+.js {
+
+    bottom: 70px;
+    left: 50px;
+
+    animation-delay: 2.5s;
+}
+
+.html {
+
+    top: 205px;
+    left: 0;
+
+    animation-delay: 3s;
+}
+
+.css {
+
+    top: 70px;
+    left: 50px;
+
+    animation-delay: 3.5s;
+}
+
+/* ==========================
+        Floating Animation
+========================== */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.foot {
+    text-align: center;
+    padding: 15px 25px;
+    color: #fff;
+    height: 900;
+    margin: 10px;
+    background: linear-gradient(135deg, #101827, #1c2c3b, #101827);
+    border-radius: 15px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+
+}
+
+.footer-links {
+    color: blueviolet;
+    margin-left: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: blueviolet;
+    margin-left: 10px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footersocial {
+    margin-bottom: 10px;
+
+}
+
+.footersocial a {
+    color: #fff;
+    margin-left: 10px;
+}
+
+.footersocial a :hover {
+    color: #C99A54;
+
+}

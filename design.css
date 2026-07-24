@@ -564,9 +564,8 @@
 
     transform: scale(1.15);
 
-    background: rgb(37, 67, 37);
-
-    color: #F8F4EF;
+    background: #8B5CF6; /* Purple */
+    color: white;
 
     box-shadow:
         0 0 20px rgba(37, 67, 37, .6),
